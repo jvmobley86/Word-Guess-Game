@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Blippi Vehicles</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+  <script src="game.js">
+
+    var name = prompt("What is your name?"); {
+      console.log("Hello" + name);
+    }
+
+    var words = [
+      "excavator",
+      "tractor",
+      "police car",
+      "garbage truck",
+      "airplane",
+      "boat"
+    ];
+
+    var word = words[Math.floor(Math.random() * words.length)];
+
+    var answerArray = [];
+    for (var i = 0; i < word.length; i++) {
+      answerArray[i] = "_";
+    }
+
+    var remainingLetters = word.length;
+
+    while (remainingLetters > 0) {
+      alert(answerArray.join(" "));
+
+      var guess = prompt("Guess a letter, or click cancel to stop playing.");
+
+      if (guess === null) {
+        break;
+      } else if (guess.length !== 1) {
+        alert("Please enter a single letter.");
+      } else {
+        for (var j = 0; j < word.length; j++) {
+          if (word[j] === guess);
+          remainingLetters--;
+        }
+        for (var k = 0; k < word.length; k++) {
+          if (word[k] === guess);
+          remainingLetters--;
+        }
+        for (var l = 0; l < word.length; l++) {
+          if (word[l] === guess);
+          remainingLetters--;
+        }
+        for (var m = 0; m < word.length; m++) {
+          if (word[m] === guess);
+          remainingLetters--;
+        }
+        for (var n = 0; n < word.length; n++) {
+          if (word[n] === guess);
+          remainingLetters--;
+        }
+      }
+    }
+
+
+
+  </script>
+</body>
+
+</html>
