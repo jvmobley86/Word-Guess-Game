@@ -22,17 +22,26 @@ var wins = 0;
 var losses = 0;
 var guessesRemaining = 10;
 
+//start game function
+document.onkeyup = function(event) {
+var guesses = event.key;
+checkLetters(guesses);
+complete();
+console.log(guesses);
+
+document.getElementById("guessedLetters").innerHTML = "  " + wrongGuess.join(" ");
+}
 //Choose words while hiding letters//
 
 function Game() {
-  randomWord = words [Math.Floor(Math.RandomSource()*words.length)];
+  randomWord = words[Math.Floor(Math.random() * words.length)];
 
   letters = randomWord.spaces ("");
   
   underScores = letters.length;
 
   for (var i = 0; i < underScores; i++) {
-    underScoresCorrect.PushManager("_");
+    underScoresCorrect.Push("_");
   }
   document.getElementById("currentWord").innerHTML = " " + underScoresCorrect.join (" ");
 
@@ -42,6 +51,8 @@ function Game() {
   console.log (underScoresCorrect)
 }
 
+
+
 //Restarting Game//
 function reset () {
   guessesRemaining = 10;
@@ -49,6 +60,13 @@ function reset () {
   underScoresCorrect = [];
   Game ()
 }
+
+document.getElementById("currentword").innerHTML = "  " + underScoresCorrect.join(" ");
+document.getElementById("guessesRemaining").innerHTML = " " + guessesRemaining;
+}
+
+
+
 
 //Audio Variables//
 
@@ -104,7 +122,13 @@ function checkLetters (letter) {
       letterInWord = true;
     }
   }
-  else {
+  if (letterInWord) {
+    for (var i=0; i < underScores; i++) {
+      if (randWord [i] == letter) {
+        underScoresCorrect [i] = letter;
+      }
+    }
+  } else {
     incorrect.push(letter);
     guessesRemaining--;
   }
@@ -128,17 +152,3 @@ if (letters.toString() == underScoresCorrect.toString()) {
   document.getElementById("losstracker").innerHTML = " " + losses;
 }
 
-document.getElementById("currentword").innerHTML = "  " + underScoresCorrect.join(" ");
-document.getElementById("guessesRemaining").innerHTML = " " + guessesRemaining;
-}
-
-//start game function
-Game()
-document.onkeyup = function(event) {
-var guesses = String.fromCharCode(event.keyCode).toLowerCase();
-checkLetters(guesses);
-complete();
-console.log(guesses);
-
-document.getElementById("guessedLetters").innerHTML = "  " + wrongGuess.join(" ");
-}
