@@ -12,9 +12,14 @@
 </head>
 
 <body>
+  <audio controls autoplay>
+    <source src="assets/audio/Intro Theme Song.mp3" type="audio">
+    <source src="assets/audio/Intro Theme Song.mp3" type="audio/mpeg">
+  </audio>
+
   <header id="masthead">
     <div class="container">
-      <img id="title-image" src="assets/images/Blippi logo.jpeg" alt = "blippi logo" style: width=500px height=250px />
+      <img id="title-image" src="assets/images/Blippi logo.jpeg" alt="blippi logo" style: width=500px height=250px />
     </div>
   </header>
 
@@ -25,49 +30,97 @@
   </div>
 
   <div id="main-container" class="container my-5 bg-white">
-    <section class="main-section">
+    <div class="main-section">
       <div class="row" id="body">
-        <div class="col-12">
+        <div class="col-12 mt-4">
           <h1>Guess the Blippi Vehicles</h1>
         </div>
         <div class="row">
 
         </div>
       </div>
-      <div class="row" id="instructions">
-        <div class="col-6 my-4">
+      <div class="row">
+        <div id="instructions" class="col-6 my-4">
+          <p></p>
           <p1> Blippi is an expert when it comes to different types of vehicles. Guess which vehicle he is introducing
             today. </p1>
+          <p></p>
           <div>
           </div>
           <div>
           </div>
-          <p2> Choose a letter. You get 10 guesses before the game ends. If you guess the word correctly, you win!</p2>
+          <p3> Choose a letter. You get 10 guesses before the game ends. If you guess the word correctly, you win!</p3>
+          <p></p>
+          <div>
+            <h3>Press any key to get started.</h3>
+          </div>
+
         </div>
 
-        <div class="col-6 my-4 gameplay-column">
+        <div id="score" class="col-6 my-4">
           <div>
-            <h10>Press any key to get started.</h10>
-            <h2 id="Wins"></h2>
-            <h3 id="totalWins"></h3>
-            <h4>Current Word</h4>
-            <h5 id="currentWord"></h5>
-            <h4>Guesses Remaining</h4>
-            <h7 id="remainingGuesses"></h7>
-            <h8>Letters Guessed</h8>
-            <h9 id="guessedLetters"></h9>
+            <h3 id="wins">Aww yeah! :
+              <span id="winstracker">
+              </span>
+            </h3>
+            <p></p>
+            <h3 id="losses">Aww shucks! :
+              <span id="losstracker">
+              </span>
+            </h3>
+            <p></p>
+            <h3>Guesses Remaining:
+              <span id="guessesRemaining"></span>
+            </h3>
+    
+            <p></p>
+            <h3>Letters Guessed:</h3>
+            <p></p>
+            <h3 id="guessedLetters"></h3>
           </div>
+
+          <div class="row">
+            <div id="gameplayColumn" class="col-12 my-4">
+              <h3>Current Word:</h3>
+              <h3 id="currentWord">_ _ _ _ _</h3>
+            </div>
+
+          </div>
+
         </div>
+        </video>
+        </video>
       </div>
-
+    </div>
+  </div>
   </div>
 
-
-
+  <!--Audio-->
+  <div>
+    <audio id="excavator">
+      <source src="assets/audio/08 The Excavator Song.m4p" type="audio/m4p">
+    </audio>
+    <audio id="tractor">
+      <source src="assets/audio/02 The Tractor Song.m4p" type="audio/m4p">
+    </audio>
+    <audio id="policeCar">
+      <source src="assets/audio/09 The Police Car Song.m4p" type="audio/m4p">
+    </audio>
+    <audio id="garbageTruck">
+      <source src="assets/audio/10 The Garbage Truck Song.m4p" type="audio/m4p">
+    </audio>
+    <audio id="airplane">
+      <source src="assets/audio/05 The Airplane Song.m4p" type="audio/m4p">
+    </audio>
+    <audio id="boat">
+      <source src="assets/audio/04 The Boat Song.m4p" type="audio/m4p">
+    </audio>
+  </div>
 
   </div>
   <script type="text/javascript" src="assets/javascript/game.js"></script>
 
+  </audio>
 </body>
 
 </html>
